@@ -1,0 +1,60 @@
+name: build
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        configuration: [All, Deflate, LZMA, LZMA2, PPMd]
+        platform: [Win32, x64]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Generate FETCH_HEAD.h
+        shell: cmd
+        run: |
+          @echo off
+          md midl
+          for /F %%x in ('git rev-list --count HEAD') do set count=%%x
+          set /a rev=4000+%count%
+          for /F %%x in ('git rev-parse --short HEAD') do set sh=%%x
+          for /F "delims=" %%x in ('git log -1 --format^="%%cd" --date^=format:"%%B %%d, %%Y"') do set date=%%x
+          for /F %%x in ('git rev-parse --verify HEAD') do set sha=%%x
+          for /F "delims=" %%x in ('git rev-parse --abbrev-ref HEAD') do set branch=%%x
+          for /F "delims=" %%x in ('git config --get remote.origin.url') do set url=%%x
+          (
+            echo #define BUILD_GIT_REV %rev%
+            echo #define BUILD_GIT_HEX 0x%sh%
+            echo #define BUILD_GIT_DATE "%date%"
+            echo #define BUILD_GIT_SHA "%sha%"
+            echo #define BUILD_GIT_BRANCH "%branch%"
+            echo #define BUILD_GIT_URL "%url%"
+          ) > midl\FETCH_HEAD.h
+          type midl\FETCH_HEAD.h
+
+      - name: Build
+        shell: pwsh
+        run: >-
+          msbuild 7zSfxMod/7zSfxMod.sln
+          /m
+          /p:Configuration=${{ matrix.configuration }}
+          /p:Platform=${{ matrix.platform }}
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: 7zSfxMod-${{ matrix.configuration }}-${{ matrix.platform }}
+          path: |
+            Output/Win32/*.exe
+            Output/Win64/*.exe
