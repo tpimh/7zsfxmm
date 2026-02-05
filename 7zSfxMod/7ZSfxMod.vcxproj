@@ -67,85 +67,85 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v90</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Deflate|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v90</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v90</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='LZMA|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v90</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='LZMA2|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v90</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='SfxTools|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v90</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='All|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v90</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='PPMd|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>Windows7.1SDK</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Deflate|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>Windows7.1SDK</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>Windows7.1SDK</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='LZMA|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>Windows7.1SDK</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='LZMA2|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>Windows7.1SDK</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='SfxTools|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>Windows7.1SDK</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='All|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>Windows7.1SDK</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -262,7 +262,7 @@
       <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
       <WarningLevel>Level4</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OmitDefaultLibName>true</OmitDefaultLibName>
+      <OmitDefaultLibName>false</OmitDefaultLibName>
       <ExceptionHandling>false</ExceptionHandling>
     </ClCompile>
     <ResourceCompile>
@@ -271,7 +271,7 @@
     </ResourceCompile>
     <Link>
       <AdditionalOptions>/STUB:lib/small.stub %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>msvcrt.lib;shlwapi.lib;comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ucrt.lib;vcruntime.lib;shlwapi.lib;comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)7zsd_$(Configuration).exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <SubSystem>Windows</SubSystem>
@@ -279,10 +279,11 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
       <TargetMachine>MachineX86</TargetMachine>
       <ProgramDatabaseFile>$(OutDir)7zsd_$(Configuration).pdb</ProgramDatabaseFile>
       <AdditionalLibraryDirectories>$(WINDDKDIR)lib\crt\i386;$(WINDDKDIR)lib\win7\i386;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
     </Link>
     <Manifest>
       <AdditionalManifestFiles>sources\res\manifest.xml;%(AdditionalManifestFiles)</AdditionalManifestFiles>
@@ -312,7 +313,7 @@
       <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
       <WarningLevel>Level4</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OmitDefaultLibName>true</OmitDefaultLibName>
+      <OmitDefaultLibName>false</OmitDefaultLibName>
       <ExceptionHandling>false</ExceptionHandling>
     </ClCompile>
     <ResourceCompile>
@@ -321,7 +322,7 @@
     </ResourceCompile>
     <Link>
       <AdditionalOptions>/STUB:lib/small.stub %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>msvcrt.lib;shlwapi.lib;comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ucrt.lib;vcruntime.lib;shlwapi.lib;comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)7zsd_$(Configuration)_x64.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <SubSystem>Windows</SubSystem>
@@ -332,7 +333,7 @@
       <TargetMachine>MachineX64</TargetMachine>
       <ProgramDatabaseFile>$(OutDir)7zsd_$(Configuration)_x64.pdb</ProgramDatabaseFile>
       <AdditionalLibraryDirectories>$(WINDDKDIR)lib\crt\amd64;$(WINDDKDIR)lib\win7\amd64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
     </Link>
     <Manifest>
       <AdditionalManifestFiles>sources\res\manifest.xml;%(AdditionalManifestFiles)</AdditionalManifestFiles>
@@ -472,7 +473,7 @@
       <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
       <WarningLevel>Level4</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OmitDefaultLibName>true</OmitDefaultLibName>
+      <OmitDefaultLibName>false</OmitDefaultLibName>
       <ExceptionHandling>false</ExceptionHandling>
     </ClCompile>
     <ResourceCompile>
@@ -481,7 +482,7 @@
     </ResourceCompile>
     <Link>
       <AdditionalOptions>/STUB:lib/small.stub %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>msvcrt.lib;shlwapi.lib;comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ucrt.lib;vcruntime.lib;shlwapi.lib;comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)7zsd_$(Configuration).exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <SubSystem>Windows</SubSystem>
@@ -490,10 +491,11 @@
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
       <TargetMachine>MachineX86</TargetMachine>
       <ProgramDatabaseFile>$(OutDir)7zsd_$(Configuration).pdb</ProgramDatabaseFile>
       <AdditionalLibraryDirectories>$(WINDDKDIR)lib\crt\i386;$(WINDDKDIR)lib\win7\i386;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
     </Link>
     <Manifest>
       <AdditionalManifestFiles>sources\res\manifest.xml;%(AdditionalManifestFiles)</AdditionalManifestFiles>
@@ -523,7 +525,7 @@
       <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
       <WarningLevel>Level4</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OmitDefaultLibName>true</OmitDefaultLibName>
+      <OmitDefaultLibName>false</OmitDefaultLibName>
       <ExceptionHandling>false</ExceptionHandling>
     </ClCompile>
     <ResourceCompile>
@@ -532,7 +534,7 @@
     </ResourceCompile>
     <Link>
       <AdditionalOptions>/STUB:lib/small.stub %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>msvcrt.lib;shlwapi.lib;comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ucrt.lib;vcruntime.lib;shlwapi.lib;comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)7zsd_$(Configuration)_x64.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <SubSystem>Windows</SubSystem>
@@ -544,7 +546,7 @@
       <TargetMachine>MachineX64</TargetMachine>
       <ProgramDatabaseFile>$(OutDir)7zsd_$(Configuration)_x64.pdb</ProgramDatabaseFile>
       <AdditionalLibraryDirectories>$(WINDDKDIR)lib\crt\amd64;$(WINDDKDIR)lib\win7\amd64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
     </Link>
     <Manifest>
       <AdditionalManifestFiles>sources\res\manifest.xml;%(AdditionalManifestFiles)</AdditionalManifestFiles>
@@ -576,7 +578,7 @@
       <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
       <WarningLevel>Level4</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OmitDefaultLibName>true</OmitDefaultLibName>
+      <OmitDefaultLibName>false</OmitDefaultLibName>
       <ExceptionHandling>false</ExceptionHandling>
       <FunctionLevelLinking>true</FunctionLevelLinking>
     </ClCompile>
@@ -586,7 +588,7 @@
     </ResourceCompile>
     <Link>
       <AdditionalOptions>/STUB:lib/small.stub %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>msvcrt.lib;shlwapi.lib;comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ucrt.lib;vcruntime.lib;shlwapi.lib;comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)7zsd_$(Configuration).exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <SubSystem>Windows</SubSystem>
@@ -595,10 +597,11 @@
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
       <TargetMachine>MachineX86</TargetMachine>
       <ProgramDatabaseFile>$(OutDir)7zsd_$(Configuration).pdb</ProgramDatabaseFile>
       <AdditionalLibraryDirectories>$(WINDDKDIR)lib\crt\i386;$(WINDDKDIR)lib\win7\i386;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
     </Link>
     <Manifest>
       <AdditionalManifestFiles>sources\res\manifest.xml;%(AdditionalManifestFiles)</AdditionalManifestFiles>
@@ -628,7 +631,7 @@
       <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
       <WarningLevel>Level4</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OmitDefaultLibName>true</OmitDefaultLibName>
+      <OmitDefaultLibName>false</OmitDefaultLibName>
       <ExceptionHandling>false</ExceptionHandling>
     </ClCompile>
     <ResourceCompile>
@@ -637,7 +640,7 @@
     </ResourceCompile>
     <Link>
       <AdditionalOptions>/STUB:lib/small.stub %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>msvcrt.lib;shlwapi.lib;comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ucrt.lib;vcruntime.lib;shlwapi.lib;comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)7zsd_$(Configuration)_x64.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <SubSystem>Windows</SubSystem>
@@ -649,7 +652,7 @@
       <TargetMachine>MachineX64</TargetMachine>
       <ProgramDatabaseFile>$(OutDir)7zsd_$(Configuration)_x64.pdb</ProgramDatabaseFile>
       <AdditionalLibraryDirectories>$(WINDDKDIR)lib\crt\amd64;$(WINDDKDIR)lib\win7\amd64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
     </Link>
     <Manifest>
       <AdditionalManifestFiles>sources\res\manifest.xml;%(AdditionalManifestFiles)</AdditionalManifestFiles>
@@ -791,7 +794,7 @@
       <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
       <WarningLevel>Level4</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OmitDefaultLibName>true</OmitDefaultLibName>
+      <OmitDefaultLibName>false</OmitDefaultLibName>
       <RuntimeTypeInfo>false</RuntimeTypeInfo>
       <ExceptionHandling>false</ExceptionHandling>
     </ClCompile>
@@ -801,16 +804,17 @@
     </ResourceCompile>
     <Link>
       <AdditionalOptions>/STUB:lib/small.stub %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>msvcrt.lib;shlwapi.lib;comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ucrt.lib;vcruntime.lib;shlwapi.lib;comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
       <OutputFile>$(OutDir)7zsd_$(Configuration).exe</OutputFile>
       <ProgramDatabaseFile>$(OutDir)7zsd_$(Configuration).pdb</ProgramDatabaseFile>
       <AdditionalLibraryDirectories>$(WINDDKDIR)lib\crt\i386;$(WINDDKDIR)lib\win7\i386;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
     </Link>
     <Manifest>
       <AdditionalManifestFiles>sources\res\manifest.xml;%(AdditionalManifestFiles)</AdditionalManifestFiles>
@@ -840,7 +844,7 @@
       <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
       <WarningLevel>Level4</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OmitDefaultLibName>true</OmitDefaultLibName>
+      <OmitDefaultLibName>false</OmitDefaultLibName>
       <ExceptionHandling>false</ExceptionHandling>
     </ClCompile>
     <ResourceCompile>
@@ -849,7 +853,7 @@
     </ResourceCompile>
     <Link>
       <AdditionalOptions>/STUB:lib/small.stub %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>msvcrt.lib;shlwapi.lib;comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ucrt.lib;vcruntime.lib;shlwapi.lib;comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)7zsd_$(Configuration)_x64.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <SubSystem>Windows</SubSystem>
@@ -861,7 +865,7 @@
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <FixedBaseAddress>true</FixedBaseAddress>
       <AdditionalLibraryDirectories>$(WINDDKDIR)lib\crt\amd64;$(WINDDKDIR)lib\win7\amd64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
     </Link>
     <Manifest>
       <AdditionalManifestFiles>sources\res\manifest.xml;%(AdditionalManifestFiles)</AdditionalManifestFiles>
@@ -894,7 +898,7 @@
       <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
       <WarningLevel>Level4</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OmitDefaultLibName>true</OmitDefaultLibName>
+      <OmitDefaultLibName>false</OmitDefaultLibName>
       <ExceptionHandling>false</ExceptionHandling>
     </ClCompile>
     <ResourceCompile>
@@ -903,7 +907,7 @@
     </ResourceCompile>
     <Link>
       <AdditionalOptions>/STUB:lib/small.stub %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>msvcrt.lib;shlwapi.lib;comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ucrt.lib;vcruntime.lib;shlwapi.lib;comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)7zsd_$(Configuration).exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <SubSystem>Windows</SubSystem>
@@ -912,10 +916,11 @@
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
       <TargetMachine>MachineX86</TargetMachine>
       <ProgramDatabaseFile>$(OutDir)7zsd_$(Configuration).pdb</ProgramDatabaseFile>
       <AdditionalLibraryDirectories>$(WINDDKDIR)lib\crt\i386;$(WINDDKDIR)lib\win7\i386;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
     </Link>
     <Manifest>
       <AdditionalManifestFiles>sources\res\manifest.xml;%(AdditionalManifestFiles)</AdditionalManifestFiles>
@@ -945,7 +950,7 @@
       <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
       <WarningLevel>Level4</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OmitDefaultLibName>true</OmitDefaultLibName>
+      <OmitDefaultLibName>false</OmitDefaultLibName>
       <ExceptionHandling>false</ExceptionHandling>
     </ClCompile>
     <ResourceCompile>
@@ -954,7 +959,7 @@
     </ResourceCompile>
     <Link>
       <AdditionalOptions>/STUB:lib/small.stub %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>msvcrt.lib;shlwapi.lib;comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ucrt.lib;vcruntime.lib;shlwapi.lib;comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)7zsd_$(Configuration)_x64.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <SubSystem>Windows</SubSystem>
@@ -966,7 +971,7 @@
       <TargetMachine>MachineX64</TargetMachine>
       <ProgramDatabaseFile>$(OutDir)7zsd_$(Configuration)_x64.pdb</ProgramDatabaseFile>
       <AdditionalLibraryDirectories>$(WINDDKDIR)lib\crt\amd64;$(WINDDKDIR)lib\win7\amd64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
     </Link>
     <Manifest>
       <AdditionalManifestFiles>sources\res\manifest.xml;%(AdditionalManifestFiles)</AdditionalManifestFiles>
